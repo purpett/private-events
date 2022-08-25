@@ -14,4 +14,4 @@ bundle exec rails server
 
 ## Deployment
 
-<!-- The application is ready to be deployed on Heroku. You can see a demo at https://stark-bastion-30084.herokuapp.com -->
+Demo will be deployed on Heroku. 
