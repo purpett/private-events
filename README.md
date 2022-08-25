@@ -1,6 +1,6 @@
-# membersonly
+# PrivateEvents
 
-**membersonly** is a simple blog/commenting platform, where only signed in users are able to view the authors of other posts and comments.
+**PrivateEvents** 
 
 ## Development
 
@@ -14,4 +14,4 @@ bundle exec rails server
 
 ## Deployment
 
-The application is ready to be deployed on Heroku. You can see a demo at https://stark-bastion-30084.herokuapp.com
+<!-- The application is ready to be deployed on Heroku. You can see a demo at https://stark-bastion-30084.herokuapp.com -->
