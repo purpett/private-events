@@ -13,11 +13,11 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-light mb-3">
       <div class="container-fluid">
-        <%= link_to "membersonly", root_path, class: "navbar-brand me-auto text-warning" %>
+        <%= link_to "Private Events", root_path, class: "navbar-brand me-auto" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-end gap-3" id="navbarSupportedContent">
+        <!-- <div class="collapse navbar-collapse justify-content-end gap-3" id="navbarSupportedContent">
           <% if current_user %> 
             <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-warning text-light" %>
           <% else %>
@@ -28,7 +28,7 @@
               <%= link_to "Sign up",  new_user_registration_path, class: "btn btn-warning text-light" %>
             <% end %>
           <% end%>
-        </div>
+        </div> -->
       </div>
     </nav>
 
