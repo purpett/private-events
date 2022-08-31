@@ -1,0 +1,12 @@
+
+<%if @events.empty? %>
+  <h1 class="text-center mt-5"> <%= "There are no events yet. Create one! :)" %> </h1>
+<% end %>
+
+<div class="d-flex flex-column align-items-center">
+  <div class="col-9">
+    <% @events.each do |event| %>
+      <%= render 'card', event: event %>
+    <% end %>
+  </div>
+</div>

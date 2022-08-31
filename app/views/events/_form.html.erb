@@ -1,0 +1,30 @@
+<div class="d-flex flex-column align-items-center">
+  <div class="col-6">
+    <%= form_with model: @event do |form| %>
+      <% if @event.errors.any? %>
+        <% @event.errors.full_messages.each do |message| %>
+          <div><%= message %></div>
+        <% end %>
+      <% end %>
+      <div class="mb-3">
+        <%= form.label :title, class: "form-label" %>
+        <div><%= form.text_field :title, class: "form-control", autocomplete: 'off' %></div>
+      </div>
+       <div class="mb-3">
+        <%= form.label :location, class: "form-label" %>
+        <div><%= form.text_field :location, class: "form-control", autocomplete: 'off' %></div>
+      </div>
+       <div class="mb-3">
+        <%= form.label :event_date, class: "form-label" %>
+        <div><%= form.date_field :event_date, class: "form-control", autocomplete: 'off' %></div>
+      </div>
+      <div class="mb-3">
+        <%= form.label :description, class: "form-label" %>
+        <div><%= form.text_area :description, class: "form-control", size: "60x10" %></div>
+      </div>
+      <div>
+        <%= form.submit class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
