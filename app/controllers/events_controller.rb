@@ -14,7 +14,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.events.build(event_params)
+    @event = current_user.events.build(event_params)  # fills in user_id in the new post. current_user = from devise
 
     if @event.save
       redirect_to events_path
