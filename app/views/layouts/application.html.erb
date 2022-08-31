@@ -17,18 +17,18 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- <div class="collapse navbar-collapse justify-content-end gap-3" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-end gap-3" id="navbarSupportedContent">
           <% if current_user %> 
-            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-warning text-light" %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary text-light" %>
           <% else %>
             <% if controller_name != "sessions" %>
-              <%= link_to "Sign in", new_user_session_path, class: "btn btn-warning text-light" %>
+              <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary text-light" %>
             <% end %>
             <% if controller_name != "registrations" %>
-              <%= link_to "Sign up",  new_user_registration_path, class: "btn btn-warning text-light" %>
+              <%= link_to "Sign up",  new_user_registration_path, class: "btn btn-primary text-light" %>
             <% end %>
           <% end%>
-        </div> -->
+        </div>
       </div>
     </nav>
 
