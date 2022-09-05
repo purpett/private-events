@@ -18,6 +18,14 @@
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
       <% end %>
     </div>
+    <h6 class="mt-5">Currently attending:</h6>
+    <div>
+      <ul>
+        <% @event.attendees.each do |attendee| %>
+          <li><%= attendee.username %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
 

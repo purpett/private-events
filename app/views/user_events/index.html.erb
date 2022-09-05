@@ -1,1 +1,8 @@
-<%= render 'events/list' %>
+Created events:
+<%= render 'events/list', events: @events %>
+
+Your events:
+
+<!-- in 'events:' can also put query. current_user has association to attended_events. This is navigation. Could have also added action in user_events_controller and use instance variable-->
+<%= render 'events/list', events: current_user.attended_events %> 
+
