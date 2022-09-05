@@ -4,6 +4,20 @@
     <p class="card-text"><%= l @event.event_date, format: :long %> </p> 
     <p class="card-text"><%= @event.location%> </p>
     <p class="card-text"><%= @event.description%> </p>
+    <div>
+      Want to attend? 
+      <% if current_user %>
+        <% #if Attendance.where(attendee: current_user, attended_event: @event).exists? %>
+        <% # if current_user.attendances.where(attended_event: @event).exists? %>
+        <% if @event.attendances.where(attendee: current_user).exists? %>
+          Thank you for joining!
+        <% else %>
+          <%= button_to "Click here!", event_attendances_path(@event), class: "btn btn-primary", form_class: "d-inline" %>        
+        <% end %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
