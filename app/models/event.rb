@@ -7,4 +7,5 @@ class Event < ApplicationRecord
   scope :past, -> { where("event_date < ?", Date.today) }
   scope :by_date, -> { order(event_date: :asc) }
 
+  validates :title, :event_date, presence: true
 end

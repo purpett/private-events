@@ -13,30 +13,16 @@
     <p class="card-text"><%= l @event.event_date, format: :long %> </p> 
     <p class="card-text"><%= @event.location%> </p>
     <p class="card-text"><%= @event.description%> </p>
-    <div>
-      Want to attend? 
-      <% if current_user %>
-        <% #if Attendance.where(attendee: current_user, attended_event: @event).exists? %>
-        <% # if current_user.attendances.where(attended_event: @event).exists? %>
-        <% if (attendance = @event.attendances.find_by(attendee: current_user)) %> <!-- (one = because special case. attendance was not defined ) -->
-          Thank you for joining!
-          Don't want to attend anymore? 
-          <%= button_to "Remove attendance", event_attendance_path(@event, attendance), method: :delete, class: "btn btn-danger", form_class: "d-inline" %>
-        <% else %>
-          <%= button_to "Click here!", event_attendances_path(@event), class: "btn btn-primary", form_class: "d-inline" %>        
-        <% end %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
-      <% end %>
-    </div>
+
+    <%= render 'attendance_form' %>
+
     <h6 class="mt-5">Currently attending:</h6>
-    <div>
-      <ul>
-        <% @event.attendees.each do |attendee| %>
-          <li><%= attendee.username %></li>
-        <% end %>
-      </ul>
-    </div>
+
+    <ul>
+      <% @event.attendees.each do |attendee| %>
+        <li><%= attendee.username %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 
