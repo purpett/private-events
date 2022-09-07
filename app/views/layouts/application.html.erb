@@ -19,7 +19,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end gap-3" id="navbarSupportedContent">
           <% if current_user %> 
-            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary text-light" %>
+            <%= link_to "New event", new_event_path, class: "btn btn-primary" %>
+            <%= link_to "My events", my_events_path, class: "btn btn-primary" %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
           <% else %>
             <% if controller_name != "sessions" %>
               <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary text-light" %>

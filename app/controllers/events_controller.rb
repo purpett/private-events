@@ -2,7 +2,7 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create] # the before action is only for new and create, can still see if not logged in
 
   def index
-    @events = Event.order(event_date: :asc)
+    @events = Event.by_date
   end
 
   def show
