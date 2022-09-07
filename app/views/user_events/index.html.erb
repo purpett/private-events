@@ -1,5 +1,5 @@
 <h3>Created events:</h3>
-<%= render 'events/list', events: @events %>
+<%= render 'events/list', events: @events.where("event_date >= ?", Date.today).order(event_date: :asc) %>
 
 <h3>Your events:</h3>
 
@@ -8,4 +8,4 @@
 
 <h3>Past events: </h3>
 
-<%= render 'events/list', events: @passed_events %>
+<%= render 'events/list', events: current_user.events.where("event_date < ?", Date.today).order(event_date: :asc)  %>
