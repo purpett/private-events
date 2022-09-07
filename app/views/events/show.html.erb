@@ -1,4 +1,13 @@
 <div class="card mb-3">
+  <div class="card-header d-flex">
+    <div class="p-1 flex-grow-1"></div>
+    <div class="p-0">
+        <% if current_user == @event.creator %>
+          <%= link_to edit_event_path(@event), class: "card-link" do %><%= image_tag "pencil-outline.svg", title: "Edit event", height: 20 %><% end %>
+          <%= button_to event_path(@event), method: :delete, class: "card-link btn btn-link ", form_class: "d-inline" do %><%= image_tag "trash-can-outline.svg", title: "Delete event", height: 20 %><% end %>
+        <%end%>
+    </div>
+  </div>
   <div class="card-body">
     <h5 class="card-title"><%= @event.title %></h5>
     <p class="card-text"><%= l @event.event_date, format: :long %> </p> 
@@ -20,7 +29,6 @@
         <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
       <% end %>
     </div>
-    
     <h6 class="mt-5">Currently attending:</h6>
     <div>
       <ul>
