@@ -1,11 +1,11 @@
 <h3>Created events:</h3>
-<%= render 'events/list', events: @events.where("event_date >= ?", Date.today).order(event_date: :asc) %>
+<%= render 'events/list', events: @events.upcoming.order(event_date: :asc) %>
 
 <h3>Your events:</h3>
 
 <!-- in 'events:' can also put query. current_user has association to attended_events. This is navigation. Could have also added action in user_events_controller and use instance variable-->
-<%= render 'events/list', events: current_user.attended_events.where("event_date >= ?", Date.today) %> 
+<%= render 'events/list', events: current_user.attended_events.upcoming.order(event_date: :asc) %> 
 
 <h3>Past events: </h3>
 
-<%= render 'events/list', events: current_user.events.where("event_date < ?", Date.today).order(event_date: :asc)  %>
+<%= render 'events/list', events: current_user.events.past.order(event_date: :asc)  %>

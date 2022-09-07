@@ -1,1 +1,5 @@
-<%= render 'list', events: @events %>
+Upcoming events:
+<%= render 'list', events: @events.upcoming.order(event_date: :asc) %>
+
+Past events:
+<%= render 'list', events: @events.past.order(event_date: :asc) %>
