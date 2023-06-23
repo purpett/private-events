@@ -1,4 +1,4 @@
-# PrivateEvents
+# Private Events
 
 ## Description
 **PrivateEvents** is an Eventbrite basic mockup, built with Ruby on Rails and Bootstrap. It allows users to create, edit and delete events. Every user can attend several events and can remove their own attendance. The user can see and manage events they created and that they want to attend on "My events" page. The homepage shows upcoming and past events. 
